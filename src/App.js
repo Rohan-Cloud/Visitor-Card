@@ -1,14 +1,9 @@
+import MainLayout from "./component/layout";
 
-import './App.css';
-  
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Rohan
-        </p>
-      </header>
+      <MainLayout/>
     </div>
   );
 }
