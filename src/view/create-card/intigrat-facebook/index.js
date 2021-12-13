@@ -23,7 +23,7 @@ const IntegrateFacebook = () => {
         password: ""
     })
     const nextStepClick = () => {
-        history.push(constant.BASE_URL + '/integrate-facebook')
+        history.push(constant.BASE_URL + '/choose-design')
     }
     return (
         <css.IntegrateFacebookStyled>

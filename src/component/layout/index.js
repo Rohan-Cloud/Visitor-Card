@@ -1,4 +1,4 @@
-import { React} from "react";
+import { React } from "react";
 import HomeLayout from "../../view/home";
 
 import * as constant from "../../../src/constant.js";
@@ -29,6 +29,10 @@ const MainLayout = () => {
 				<Route exact path={constant.BASE_URL + "/create-your-own"}>
 					<GetInfoMainLayout />
 				</Route>
+				<Route path={constant.BASE_URL + "/*"}>
+					<HomeLayout />
+				</Route>
+
 			</Switch>
 
 		</Router>

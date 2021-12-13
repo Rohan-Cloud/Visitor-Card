@@ -8,12 +8,13 @@ import {
 } from "react-router-dom";
 import GetInformation from "./get-info/index";
 import IntegrateFacebook from "./intigrat-facebook/index";
+import ChooseDesign from "./choose-design";
 const GetInfoMainLayout = () => {
 	const history = useHistory();
 	return (
 		<css.GetInfoMainStyled>
 			<nav className="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top ">
-				<Link className="navbar-brand logo-image" to={constant.BASE_URL + "/home"} onClick={() => { history.push(constant.BASE_URL + '/home') }}><img src="images/logo.svg" alt="alternative" /></Link>
+				<Link className="navbar-brand logo-image" to={constant.BASE_URL + "/home"} onClick={() => { history.push(constant.BASE_URL + '/home') }}><p className="logoname">MY.IDENTITY</p></Link>
 				<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 					<span className="navbar-toggler-awesome fas fa-bars"></span>
 					<span className="navbar-toggler-awesome fas fa-times"></span>
@@ -30,6 +31,9 @@ const GetInfoMainLayout = () => {
 						</Route>
 						<Route exact path={constant.BASE_URL + "/integrate-facebook"}>
 							<IntegrateFacebook />
+						</Route>
+						<Route exact path={constant.BASE_URL + "/choose-design"}>
+							<ChooseDesign />
 						</Route>
 					</Switch>
 				</Router>

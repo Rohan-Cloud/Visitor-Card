@@ -19,7 +19,20 @@ export const GetInfoMainStyled = styled.div`
     }
     .middleContent
     {
-        padding:6%;
+        padding-right:12%;
+        padding-left:12%;
+        margin-top:7%;
+        padding-bottom:7%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        text-align:justify;
+    }
+    .logoname
+    {
+        color: #ffbd50;
+        font-size: xx-large;
+        font-weight: 800;
+        margin-top:18%;
     }
 
 `;

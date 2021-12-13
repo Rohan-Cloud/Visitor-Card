@@ -1,12 +1,15 @@
-import { React } from "react";
+import { React, useEffect } from "react";
 import * as constant from "../../../src/constant";
 import {
     useHistory, Link
 } from "react-router-dom";
+import * as css from "./style";
 const HomeLayout = () => {
     const history = useHistory();
-
-    return (<>
+    useEffect(() => {
+        history.push('/home')
+    }, [])
+    return (<css.HomeStyled>
         {/* <div class="spinner-wrapper">
             <div class="spinner">
                 <div class="bounce1"></div>
@@ -16,7 +19,7 @@ const HomeLayout = () => {
         </div> */}
 
         <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-            <Link class="navbar-brand logo-image" to={constant.BASE_URL + "/home"} onClick={() => { history.push(constant.BASE_URL + '/home') }}><img src="images/logo.svg" alt="alternative" /></Link>
+            <Link class="navbar-brand logo-image" to={constant.BASE_URL + "/home"} onClick={() => { history.push(constant.BASE_URL + '/home') }}><p className="logoname">MY.IDENTITY</p></Link>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-awesome fas fa-bars"></span>
                 <span class="navbar-toggler-awesome fas fa-times"></span>
@@ -28,17 +31,7 @@ const HomeLayout = () => {
                         <a class="nav-link page-scroll" href="#register">REGISTER <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#description">DETAILS</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle page-scroll" href="#date" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">DATE</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="article-details.html"><span class="item-text">ARTICLE DETAILS</span></a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">TERMS CONDITIONS</span></a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">PRIVACY POLICY</span></a>
-                        </div>
+                        <a class="nav-link page-scroll" href="#aboutus">ABOUT US</a>
                     </li>
 
                     <li class="nav-item">
@@ -82,26 +75,9 @@ const HomeLayout = () => {
                     <div class="swiper-container image-slider-1">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide" >
-                                <img class="img-fluid" src="images/details-slide-1.jpg" alt="alternative" />
-                            </div>
-
-
-
-                            <div class="swiper-slide">
-                                <img class="img-fluid" src="images/details-slide-2.jpg" alt="alternative" />
-                            </div>
-
-
-
-                            <div class="swiper-slide">
-                                <img class="img-fluid" src="images/details-slide-3.jpg" alt="alternative" />
+                                <img class="img-fluid1" src="images/front-image.jpg" alt="alternative" />
                             </div>
                         </div>
-
-
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-
 
                     </div>
                 </div>
@@ -116,7 +92,7 @@ const HomeLayout = () => {
                     <div class="col-lg-6">
                         <div class="text-container">
                             <h2>Register Using The Form</h2>
-                            <p>It's easy to register for the course, just fill out the form and click submit. Then you will be registered for one of the best SEO training courses in the industry</p>
+                            <p>It's easy to register for the course, just fill out the form and click submit</p>
                             <ul class="list-unstyled li-space-lg">
                                 <li class="media">
                                     <i class="fas fa-square"></i>
@@ -152,7 +128,7 @@ const HomeLayout = () => {
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group checkbox">
-                                    <input type="checkbox" id="rterms" value="Agreed-to-Terms" name="rterms" required />I've read and agree to Corso's written <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-conditions.html">Terms & Conditions</a>
+                                    <input type="checkbox" id="rterms" value="Agreed-to-Terms" name="rterms" required />I've read and agree to MY.IDENTITY written <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-conditions.html">Terms & Conditions</a>
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
@@ -168,7 +144,7 @@ const HomeLayout = () => {
             </div>
         </div>
 
-        <div class="slider-1">
+        {/* <div class="slider-1">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -204,22 +180,17 @@ const HomeLayout = () => {
                     </div>
                 </div>
             </div>
-        </div>
-
-
-
-
+        </div> */}
         <div id="instructor" class="basic-1">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <img class="img-fluid" src="images/instructor.jpg" alt="alternative" />
+                        <img class="img-fluid" src="images/virtul-card-image.jpg" alt="alternative" />
                     </div>
                     <div class="col-lg-6">
                         <div class="text-container">
-                            <h2>I’m Garry Your Trainer</h2>
-                            <p>Hi everybody! I am Garry and I will be your main instructor durnig the SEO training course. I have more than 10 years experience in SEO and I am very passionate about this field. Register for the course and let's meet.</p>
-                            <p>Teaching students all about the beste SEO techniques is something I love to do as a full-time job</p>
+                            <h2>Leading Industrialists Prefer</h2>
+                            <p>The contemporary business environment demands only bold new ideas for running a business. Our virtual business card maker app marks the initial step for making networking much more feasible and convenient as per the business requirements.</p>
                         </div>
                     </div>
                 </div>
@@ -230,7 +201,7 @@ const HomeLayout = () => {
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h2>What Will You Learn In Our SEO Focused Training Course</h2>
+                        <h2>Reasons You Need a Virtual Business Card</h2>
                     </div>
                 </div>
                 <div class="row">
@@ -239,22 +210,22 @@ const HomeLayout = () => {
                             <li class="media">
                                 <i class="bullet">1</i>
                                 <div class="media-body">
-                                    <h4>Optimizing your site for mobile devices</h4>
-                                    <p>One of the keys of great SEO is having a mobile friendly website which works smoothly on all devices</p>
+                                    <h4>Networking Events</h4>
+                                    <p>Luncheons and happy hours are popular among networkers. Sharing your contact information with attendees at these events is an important part of successful networking. A virtual business card lives on your smartphone so you don’t have to worry about grabbing or running out of your paper business cards. Don’t be the one to stand out because you don’t have a business card.</p>
                                 </div>
                             </li>
                             <li class="media">
                                 <i class="bullet">2</i>
                                 <div class="media-body">
-                                    <h4>Understand how users search</h4>
-                                    <p>It's not enough anymore to find relevant industry keywords and write huge amounts of content </p>
+                                    <h4>Job Fairs</h4>
+                                    <p>A great way to introduce yourself to companies for which you’d like to work is by going to job fairs. Invite company representatives to get your personal virtual business card and share your contact info and a direct link to your resume.</p>
                                 </div>
                             </li>
                             <li class="media">
                                 <i class="bullet">3</i>
                                 <div class="media-body">
-                                    <h4>Write for humans optimize for engines</h4>
-                                    <p>Write well structured and understandable articles not just a mix of paragraphs that contain keywords</p>
+                                    <h4>Social gatherings</h4>
+                                    <p>A networking opportunity can occur at any time. Don’t get caught off guard at your next party, family gathering, or event. A virtual business card will allow you to quickly connect with new contacts, even at the most unexpected time.</p>
                                 </div>
                             </li>
                         </ul>
@@ -264,22 +235,22 @@ const HomeLayout = () => {
                             <li class="media">
                                 <i class="bullet">4</i>
                                 <div class="media-body">
-                                    <h4>Analyse your existing search traffic</h4>
-                                    <p>A good action plan comes out of understanding where your current position is and the environment</p>
+                                    <h4>Present Yourself as a True Professional</h4>
+                                    <p>It doesn’t matter if you are searching for a job, are self-employed or work for a larger corporation. Having a business card will help you to stand out and be remembered. Successful networking occurs when one or more of the parties see a value in the other’s offerings. With a virtual business card, you can share your contact info as well as links to valuable content.</p>
                                 </div>
                             </li>
                             <li class="media">
                                 <i class="bullet">5</i>
                                 <div class="media-body">
-                                    <h4>Keep updated with the latest changes</h4>
-                                    <p>Google changes it's search indexing algorithm twice a year so it's important to stay updated with news</p>
+                                    <h4>Create New Opportunities</h4>
+                                    <p>Not everyone will visit your website or watch your promotional video right when they receive the link. Many people will go back and sort through materials and cards they received and further research the ones they are interested in.</p>
                                 </div>
                             </li>
                             <li class="media">
                                 <i class="bullet">6</i>
                                 <div class="media-body">
-                                    <h4>Learn the most important ranking factors</h4>
-                                    <p>Learn which are the most important search engine ranking factors and optimize your website accordnigly</p>
+                                    <h4>Create a Call to Action</h4>
+                                    <p>With 90% of business card recipients tossing paper cards within the first week, virtual business cards make even more sense. The virtual business card allows you to use SMS to quickly share your personal information with new contacts while allowing them to quickly save your information as a new contact. </p>
                                 </div>
                             </li>
                         </ul>
@@ -291,7 +262,7 @@ const HomeLayout = () => {
 
 
 
-        <div class="basic-3">
+        {/* <div class="basic-3">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
@@ -307,11 +278,11 @@ const HomeLayout = () => {
                 </div>
             </div>
         </div>
+ */}
 
 
 
-
-        <div id="details-lightbox" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        {/* <div id="details-lightbox" class="lightbox-basic zoom-anim-dialog mfp-hide">
             <div class="container">
                 <div class="row">
                     <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
@@ -378,7 +349,7 @@ const HomeLayout = () => {
             </div>
         </div>
 
-
+ */}
 
 
         <div class="cards">
@@ -386,7 +357,7 @@ const HomeLayout = () => {
                 <div class="row">
                     <div class="col-lg-12">
                         <h2>Key Takeaways</h2>
-                        <p class="p-heading">Here are the main topics that will be covered in the SEO training course. They cover all the basics of SEO and even some advanced techniques that will help you along the way</p>
+                        <p class="p-heading">Here are the main advantages of using digital buisness card</p>
                     </div>
                 </div>
                 <div class="row">
@@ -398,8 +369,8 @@ const HomeLayout = () => {
                                 <i class="fas fa-atom"></i>
                             </div>
                             <div class="card-body">
-                                <h4 class="card-title">Position Analysis</h4>
-                                <p>Understand where your website is currently positioned in search engine queries</p>
+                                <h4 class="card-title">Savvy marketing tool.</h4>
+                                <p>MyIdentity works as a clever marketing tool by driving traffic to your website, social media and key company links.</p>
                             </div>
                         </div>
 
@@ -410,8 +381,8 @@ const HomeLayout = () => {
                                 <i class="fas fa-key"></i>
                             </div>
                             <div class="card-body">
-                                <h4 class="card-title">Keyword Planning</h4>
-                                <p>Find the best relevant keywords that fit your website SEO strategy in the long run</p>
+                                <h4 class="card-title">0% paper,100% sustainable.</h4>
+                                <p>2 million trees are cut down every year to print business cards. By switching to digital cards, you’re keeping trees in the ground.</p>
                             </div>
                         </div>
 
@@ -423,135 +394,15 @@ const HomeLayout = () => {
                                 <i class="fas fa-newspaper"></i>
                             </div>
                             <div class="card-body">
-                                <h4 class="card-title">Writing Articles</h4>
-                                <p>How to plan your content strategy and write articles that are optimized for SEO</p>
+                                <h4 class="card-title">Contactless</h4>
+                                <p>Hand shakes and paper business cards are no longer acceptable in the world post COVID19. </p>
                             </div>
                         </div>
-
-
-
-                        <div class="card">
-                            <div class="card-image">
-                                <i class="fas fa-link"></i>
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title">Gathering Backlinks</h4>
-                                <p>Backlinks are vital for SEO and we'll teach you everything there is to know about them</p>
-                            </div>
-                        </div>
-
-
-
-                        <div class="card">
-                            <div class="card-image">
-                                <i class="far fa-handshake"></i>
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title">Build Partnerships</h4>
-                                <p>Partnerships will help you establish your website or blog as an authority in your field</p>
-                            </div>
-                        </div>
-
-
-
-
-                        <div class="card">
-                            <div class="card-image">
-                                <i class="fas fa-chart-bar"></i>
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title">Evaluate Actions</h4>
-                                <p>Learn how to use the right analytics tools to evaluate your SEO actions and improve them</p>
-                            </div>
-                        </div>
-
-
                     </div>
                 </div>
             </div>
         </div>
-
-
-
-
-        <div class="slider-2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h3>Check out our attendees testimonials from previous editions of the SEO Training</h3>
-
-
-                        <div class="slider-container">
-                            <div class="swiper-container text-slider">
-                                <div class="swiper-wrapper">
-
-
-                                    <div class="swiper-slide">
-                                        <div class="image-wrapper">
-                                            <img class="img-fluid" src="images/testimonial-1.jpg" alt="alternative" />
-                                        </div>
-                                        <div class="text-wrapper">
-                                            <div class="testimonial-text">I took the SEO training course about a year ago and I am very happy. It taught me all the basics of search engine optimization and some tricks.</div>
-                                            <div class="testimonial-author">Jude Thorn - Online Marketer</div>
-                                        </div>
-                                    </div>
-
-
-
-                                    <div class="swiper-slide">
-                                        <div class="image-wrapper">
-                                            <img class="img-fluid" src="images/testimonial-2.jpg" alt="alternative" />
-                                        </div>
-                                        <div class="text-wrapper">
-                                            <div class="testimonial-text">Awesome course for the money. I never thought I could learn so much about search engine optimization in such a short amount of time. Highly recommend.</div>
-                                            <div class="testimonial-author">Roy Smith - Developer</div>
-                                        </div>
-                                    </div>
-
-
-
-                                    <div class="swiper-slide">
-                                        <div class="image-wrapper">
-                                            <img class="img-fluid" src="images/testimonial-3.jpg" alt="alternative" />
-                                        </div>
-                                        <div class="text-wrapper">
-                                            <div class="testimonial-text">Corso is the best SEO training course in the market. It teaches you all the basics but it also adds value with some advanced tips & tricks the are great.</div>
-                                            <div class="testimonial-author">Martin Singer - Online Marketer</div>
-                                        </div>
-                                    </div>
-
-
-
-                                    <div class="swiper-slide">
-                                        <div class="image-wrapper">
-                                            <img class="img-fluid" src="images/testimonial-4.jpg" alt="alternative" />
-                                        </div>
-                                        <div class="text-wrapper">
-                                            <div class="testimonial-text">Learning SEO can actually be fun. I attended Corso SEO training and I had a great time with my peer students and the instructors. Highly recommended course.</div>
-                                            <div class="testimonial-author">Ronda Louis - Business Owner</div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-
-
-                                <div class="swiper-button-next"></div>
-                                <div class="swiper-button-prev"></div>
-
-
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
+{/* 
         <div id="date" class="basic-5">
             <div class="container">
                 <div class="row">
@@ -564,7 +415,7 @@ const HomeLayout = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div> */}
 
         <div class="form-2">
             <div class="container">
@@ -579,7 +430,7 @@ const HomeLayout = () => {
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group checkbox">
-                                <input type="checkbox" id="nterms" value="Agreed-to-Terms" required />I've read and agree to Corso's written <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-conditions.html">Terms Conditions</a>
+                                <input type="checkbox" id="nterms" value="Agreed-to-Terms" required />I've read and agree to MY.IDENTITY written <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-conditions.html">Terms Conditions</a>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
@@ -647,11 +498,11 @@ const HomeLayout = () => {
                                 </li>
                                 <li class="media">
                                     <i class="fas fa-mobile-alt"></i>
-                                    <div class="media-body">+44 68 554 332, &nbsp;&nbsp;<i class="fas fa-mobile-alt"></i>&nbsp; +44 31 276 112</div>
+                                    <div class="media-body">+91 - 9998669006, &nbsp;&nbsp;<i class="fas fa-mobile-alt"></i>&nbsp; +91 - 9998669006</div>
                                 </li>
                                 <li class="media">
                                     <i class="fas fa-envelope"></i>
-                                    <div class="media-body"><a class="light-gray" href="mailto:contact@zigo.com">contact@zigo.com</a> <i class="fas fa-globe"></i><a class="light-gray" href="#your-link">www.zigo.com</a></div>
+                                    <div class="media-body"><a class="light-gray" href="mailto:contact@zigo.com">rohan@gmail.com</a> <i class="fas fa-globe"></i><a class="light-gray" href="#your-link">www.MyIdentity.com</a></div>
                                 </li>
                             </ul>
                         </div>
@@ -676,7 +527,7 @@ const HomeLayout = () => {
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group checkbox">
-                                <input type="checkbox" id="cterms" value="Agreed-to-Terms" required />I have read and agree to Corso's stated <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-conditions.html">Terms Conditions</a>
+                                <input type="checkbox" id="cterms" value="Agreed-to-Terms" required />I have read and agree to MY.IDENTITY stated <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-conditions.html">Terms Conditions</a>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
@@ -696,13 +547,13 @@ const HomeLayout = () => {
 
 
 
-        <div class="footer">
+        <div class="footer" id="aboutus">
             <div class="container">
                 <div class="row">
                     <div class="col-md-3">
                         <div class="footer-col first">
-                            <h5>About Corso</h5>
-                            <p class="p-small">We're passionate about teaching people how to do better SEO for their online presence</p>
+                            <h5>About MY.IDENTITY</h5>
+                            <p class="p-small">MyIdentity is the most advanced electronic business card management app on the market. It is loaded with cutting-edge features, including the ultimate Digital Business Card Design Suite,</p>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -782,6 +633,6 @@ const HomeLayout = () => {
         </div>
 
 
-    </>)
+    </css.HomeStyled>)
 }
 export default HomeLayout
