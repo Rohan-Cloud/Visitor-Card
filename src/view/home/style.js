@@ -12,6 +12,10 @@ export const HomeStyled = styled.div`
         color: #ffbd50;
         font-size: xx-large;
         font-weight: 800;
+        margin-top: 31px;
+    }
+    .navbar-custom{
+        height:10px;
     }
 
 `;

@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React } from "react";
 import { Steps, Card } from "antd";
 
 import * as css from "./style";
@@ -7,21 +7,17 @@ import RegulerButton from "../../../component/button";
 
 import * as constant from "../../../constant";
 import 'antd/dist/antd.css';
-import {
-    useHistory, Link, Switch,
-    Route,
-    BrowserRouter as Router,
-} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 const IntegrateFacebook = () => {
     const history = useHistory();
     const { Step } = Steps;
-    const [form, setForm] = useState({
-        firstName: "",
-        lastName: "",
-        mobilePhone: "",
-        Email: "",
-        password: ""
-    })
+    // const [form, setForm] = useState({
+    //     firstName: "",
+    //     lastName: "",
+    //     mobilePhone: "",
+    //     Email: "",
+    //     password: ""
+    // })
     const nextStepClick = () => {
         history.push(constant.BASE_URL + '/choose-design')
     }
@@ -36,8 +32,8 @@ const IntegrateFacebook = () => {
                 Make your card as good as you
             </h3>
             <br />
-            <div className="cardClass"> 
-                <Card style={{ width: 500 ,marginRight:"5%"}}>
+            <div className="cardClass">
+                <Card style={{ width: 500, marginRight: "5%" }}>
                     <p>To Make your work simpler, we add one more feture for you</p>
                     <p>Just link your facebook account with few click</p>
                     <RegulerButton

@@ -32,7 +32,8 @@ export const GetInfoMainStyled = styled.div`
         color: #ffbd50;
         font-size: xx-large;
         font-weight: 800;
-        margin-top:18%;
+       
+        margin-top: 31px;
     }
 
 `;

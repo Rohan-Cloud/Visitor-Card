@@ -66,4 +66,17 @@ export const ChooseDesignStyled = styled.div`
         -moz-text-size-adjust:none;
         text-size-adjust:none;
     }
+    .black{
+        margin-top: 106%;
+    }
+    .cream{
+        margin-top: 68%;
+    }
+    .btnStyle{
+        color:black;
+    }
+    .next-btn
+    {
+        text-align-last: end;
+    }
 `;

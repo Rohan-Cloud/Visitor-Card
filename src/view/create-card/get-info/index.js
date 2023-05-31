@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React } from "react";
 import { Steps } from "antd";
 
 import * as css from "./style";
@@ -6,23 +6,19 @@ import TextBox from "../../../component/textbox";
 import RegulerButton from "../../../component/button";
 import * as constant from "../../../constant";
 import 'antd/dist/antd.css';
-import {
-	useHistory, Link, Switch,
-	Route,
-	BrowserRouter as Router,
-} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 const GetInformation = () => {
     const history = useHistory();
     const { Step } = Steps;
-    const [form, setForm] = useState({
-        firstName: "",
-        lastName: "",
-        mobilePhone: "",
-        Email: "",
-        password: ""
-    })
+    // const [form, setForm] = useState({
+    //     firstName: "",
+    //     lastName: "",
+    //     mobilePhone: "",
+    //     Email: "",
+    //     password: ""
+    // })
     const nextStepClick = () => {
-        history.push(constant.BASE_URL + '/integrate-facebook') 
+        history.push(constant.BASE_URL + '/integrate-facebook')
     }
     return (
         <css.GetInfoStyled>

@@ -7,7 +7,7 @@ import * as css from "./style";
 const HomeLayout = () => {
     const history = useHistory();
     useEffect(() => {
-        history.push('/home')
+        history.push(['/home'])
     }, [])
     return (<css.HomeStyled>
         {/* <div class="spinner-wrapper">
@@ -626,7 +626,7 @@ const HomeLayout = () => {
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <p class="p-small">Copyright © 2020 <a href="https://inovatik.com">Inovatik</a> - All rights reserved</p>
+                        <p class="p-small">Copyright © 2023 <a href="https://inovatik.com">Inovatik</a> - All rights reserved</p>
                     </div>
                 </div>
             </div>
